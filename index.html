@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple DOM</title>
+    <style>
+        body{
+            /* width: 100%;
+            height: 100vh; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .main-heading{
+            color: purple;
+        }
+        .para{
+            padding: 0.70rem 4rem;
+            border: 1px solid grey;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="main-heading">pick Yourself</h1>
+    <h3>getElementByClassName() & querySelector()</h3>
+    <div>
+        <p class="para para1 one">Click to change this to green</p>
+        <p class="para para1 two">Click to change this to blue</p>
+        <p class="para para1 three">Click to change this to red</p>
+        <p class="para foure">Undo</p>
+    </div>
+
+
+    <script>
+        let first = document.querySelector('.one')
+        let sexond = document.querySelector('.two')
+        let three = document.querySelector('.three')
+
+        let reset = document.querySelector('.foure')
+        
+        first.addEventListener('click',function
+        (){
+            first.style.backgroundColor = 'green';
+            console.log(first.style.backgroundColor);
+        })
+
+
+        sexond.addEventListener('click',function
+        (){
+            sexond.style.backgroundColor = 'blue';
+            console.log(sexond.style.backgroundColor);
+        })
+
+
+        three.addEventListener('click',function
+        (){
+            three.style.backgroundColor = 'red';
+            console.log(three.style.backgroundColor);
+        })
+
+// re sets....
+        reset.addEventListener('click',function
+        (){
+
+            let all = document.querySelectorAll('.para1')
+           for(let i=0;i<all.length;i++){
+            all[i].style.backgroundColor="black";
+           }
+
+           
+            // first.style.backgroundColor = 'black';
+
+            // sexond.style.backgroundColor = 'black';
+
+            // three.style.backgroundColor = 'black';
+        })
+
+    </script>
+</body>
+</html>
